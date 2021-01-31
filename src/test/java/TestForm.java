@@ -63,7 +63,7 @@ public class TestForm {
 
     //Results Verification
             $(".modal-title").shouldHave(text("Thanks for submitting the form"));
-            // simple and stupid: $$(".table-responsive tr").shouldHave(textsInAnyOrder("Values", "Female", "p.ann@i.ua","17 May,1995", "Anna Pedych", "0123456789","Maths", "Reading", "03163e85-a0d5-4174-bb83-8eac88234887.png", "123 Main St, App.123", "NCR Noida"));
+            //OK but stupid: $$(".table-responsive tr").shouldHave(textsInAnyOrder("Values", "Female", "p.ann@i.ua","17 May,1995", "Anna Pedych", "0123456789","Maths", "Reading", "03163e85-a0d5-4174-bb83-8eac88234887.png", "123 Main St, App.123", "NCR Noida"));
             $$(".table-responsive tr").filterBy(text("Student name")).shouldHave(textsInAnyOrder("Anna Pedych"));
             $$(".table-responsive tr").filterBy(text("Student email")).shouldHave(textsInAnyOrder("p.ann@i.ua"));
             $$(".table-responsive tr").filterBy(text("Gender")).shouldHave(textsInAnyOrder("Female"));
@@ -78,5 +78,3 @@ public class TestForm {
     sleep(5000);
                 }
 }
-
-
