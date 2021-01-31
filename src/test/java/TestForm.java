@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -42,6 +44,8 @@ public class TestForm {
             $("#subjectsInput").setValue("Computer Science").pressEnter();
 
             $("#hobbiesWrapper").$(byText("Reading")).click();
+
+            $("#uploadPicture").uploadFile(new File ("src/test/resources/03163e85-a0d5-4174-bb83-8eac88234887.png"));
             $("#currentAddress").setValue("123 Main St, App.123");
 
             $("#state").click();
@@ -51,9 +55,8 @@ public class TestForm {
             $("#city").click();
             $("#stateCity-wrapper").$(byText("Noida")).click();
             $("#submit").click();
-
-
-    sleep(5000);
-
-    }
+                }
 }
+
+//Results Verification
+
