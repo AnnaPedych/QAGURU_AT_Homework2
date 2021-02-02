@@ -43,7 +43,7 @@ public class TestForm {
 //Test steps
             open("https://demoqa.com/automation-practice-form");
             $("#firstName").setValue(firstname);
-            $("#lastName").setValue(lastname);
+            $x("//input[@id='lastName']").setValue(lastname);
             $("#userEmail").setValue(email);
 
                // unable to locate element $("#gender-radio-2").$(byValue("Female")).click();
