@@ -29,7 +29,7 @@ public class TestForm {
                 mobile = "0123456789",
                 month = "May",
                 year = "1995",
-                day = "17",
+                day = "30",
                 subject1 = "Maths",
                 subject2 = "Computer Science",
                 hobby = "Reading",
@@ -63,9 +63,9 @@ public class TestForm {
             $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
 
             //не сработали:
-            //$x("//div[@class='react-datepicker__day--017' and contains(@aria-label,'May')]").click();
-            //$(".react-datepicker__week").$(byAttribute("aria-label", "Choose Wednesday, May 17th, 1995")).click();
-            //$(".react-datepicker__week").$(byAttribute("aria-label~", "May 17th")).click();
+            //$x("//div[@class='react-datepicker__day--030' and contains(@aria-label,'May')]").click();
+            //$(".react-datepicker__week").$(byAttribute("aria-label", "Choose Wednesday, May 30th, 1995")).click();
+            //$(".react-datepicker__week").$(byAttribute("aria-label~", "May 30th")).click();
 
             $("#subjectsInput").setValue(subject1).pressEnter();
             $("#subjectsInput").setValue(subject2).pressEnter();
