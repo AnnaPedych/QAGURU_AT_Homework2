@@ -60,9 +60,9 @@ public class TestForm {
             //$(".react-datepicker__month-select").selectOption(4);
             $(".react-datepicker__month-select").selectOption(month);
             $(".react-datepicker__year-select").selectOption(year);
-            $(".react-datepicker__day--017").click();
+            $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
 
-            //как задать 30 и быть уверенным что выберется 30 мая, а не апреля?
+            //не сработали:
             //$x("//div[@class='react-datepicker__day--017' and contains(@aria-label,'May')]").click();
             //$(".react-datepicker__week").$(byAttribute("aria-label", "Choose Wednesday, May 17th, 1995")).click();
             //$(".react-datepicker__week").$(byAttribute("aria-label~", "May 17th")).click();
