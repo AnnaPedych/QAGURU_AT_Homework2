@@ -59,15 +59,15 @@ public class AutomationPracticeFormTests {
         $("#submit").click();
 // Test Results Verification
         $(".modal-title").shouldHave(text("Thanks for submitting the form"));
-        $$(".table-responsive tr").filterBy(text("Student name")).shouldHave(textsInAnyOrder(firstname + " " + lastname));
-        $$(".table-responsive tr").filterBy(text("Student email")).shouldHave(textsInAnyOrder(email));
-        $$(".table-responsive tr").filterBy(text("Gender")).shouldHave(textsInAnyOrder(gender));
-        $$(".table-responsive tr").filterBy(text("Mobile")).shouldHave(textsInAnyOrder(mobile));
-        $$(".table-responsive tr").filterBy(text("Date of birth")).shouldHave(textsInAnyOrder(day + " " + month + "," + year));
-        $$(".table-responsive tr").filterBy(text("Subjects")).shouldHave(textsInAnyOrder(subject1 + "," + " " + subject2));
-        $$(".table-responsive tr").filterBy(text("Hobbies")).shouldHave(textsInAnyOrder(hobby));
-        $$(".table-responsive tr").filterBy(text("Picture")).shouldHave(textsInAnyOrder(filename));
-        $$(".table-responsive tr").filterBy(text("Address")).shouldHave(textsInAnyOrder(address));
-        $$(".table-responsive tr").filterBy(text("State and City")).shouldHave(textsInAnyOrder(state + " " + city));
+        $$(".table-responsive tr").filterBy(text("Student name")).shouldHave(texts(firstname + " " + lastname));
+        $$(".table-responsive tr").filterBy(text("Student email")).shouldHave(texts(email));
+        $$(".table-responsive tr").filterBy(text("Gender")).shouldHave(texts(gender));
+        $$(".table-responsive tr").filterBy(text("Mobile")).shouldHave(texts(mobile));
+        $$(".table-responsive tr").filterBy(text("Date of birth")).shouldHave(texts(day + " " + month + "," + year));
+        $$(".table-responsive tr").filterBy(text("Subjects")).shouldHave(texts(subject1 + "," + " " + subject2));
+        $$(".table-responsive tr").filterBy(text("Hobbies")).shouldHave(texts(hobby));
+        $$(".table-responsive tr").filterBy(text("Picture")).shouldHave(texts(filename));
+        $$(".table-responsive tr").filterBy(text("Address")).shouldHave(texts(address));
+        $$(".table-responsive tr").filterBy(text("State and City")).shouldHave(texts(state + " " + city));
     }
 }
