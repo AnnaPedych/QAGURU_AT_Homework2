@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import java.io.File;
 
@@ -13,11 +14,12 @@ public class AutomationPracticeFormTests extends TestBase {
     @Test
     void FormFieldsPopulationTest() {
 //Test data
-        String firstname = "Anna",
-                lastname = "Pedych",
-                email = "p.ann@i.ua",
+        Faker faker = new Faker();
+        String firstname = faker.name().firstName(),
+                lastname = faker.name().lastName(),
+                email = faker.internet().emailAddress("test"),
                 gender = "Female",
-                mobile = "1234567890",
+                mobile = faker.phoneNumber().subscriberNumber(10),
                 month = "May",
                 year = "1995",
                 day = "30",
@@ -26,7 +28,7 @@ public class AutomationPracticeFormTests extends TestBase {
                 hobby = "Reading",
                 fileloc = "src/test/resources/03163e85-a0d5-4174-bb83-8eac88234887.png",
                 filename = "03163e85-a0d5-4174-bb83-8eac88234887.png",
-                address = "123 Main St, App.123",
+                address = faker.address().fullAddress(),
                 state = "NCR",
                 city = "Noida";
 //Test steps
