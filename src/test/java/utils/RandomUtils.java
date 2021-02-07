@@ -36,13 +36,15 @@ public class RandomUtils {
         int messageLength = getRandomInt(min, max);
         while (message.length() < messageLength) {
             int wordIndex = getRandomInt(0, words.length -1);
-            message.append(words[wordIndex]).append(" ");
+            message.append(words[wordIndex] + " ");
         }
 
-        return StringUtils.capitalize(message.toString())
+        String readyMessage = StringUtils.capitalize(message.toString())
                 .replace("  ", " ")
                 .replace(" ,", ",")
                 .replace(" .", ".").trim();
+
+        return readyMessage;
     }
 
     public static int getRandomInt(int min, int max) {
