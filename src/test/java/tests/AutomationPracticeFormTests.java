@@ -1,9 +1,6 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
 
 import static com.codeborne.selenide.CollectionCondition.*;
@@ -20,7 +17,7 @@ public class AutomationPracticeFormTests extends TestBase {
                 lastname = "Pedych",
                 email = "p.ann@i.ua",
                 gender = "Female",
-                mobile = "0123456789",
+                mobile = "1234567890",
                 month = "May",
                 year = "1995",
                 day = "30",
