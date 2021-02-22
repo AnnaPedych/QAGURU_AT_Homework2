@@ -10,7 +10,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 public class TestBase {
     @BeforeAll
     static void setup() {
-        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        addListener("AllureSelenide", new AllureSelenide());
         Configuration.startMaximized = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/";
     }

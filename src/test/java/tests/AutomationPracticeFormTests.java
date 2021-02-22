@@ -4,8 +4,6 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
@@ -29,8 +27,7 @@ public class AutomationPracticeFormTests extends TestBase {
                 subject1 = "Maths",
                 subject2 = "Computer Science",
                 hobby = "Reading",
-                fileloc = "src/test/resources/03163e85-a0d5-4174-bb83-8eac88234887.png",
-                filename = "03163e85-a0d5-4174-bb83-8eac88234887.png",
+                filename = "1.png",
                 address = faker.address().fullAddress(),
                 state = "NCR",
                 city = "Noida";
@@ -48,7 +45,7 @@ public class AutomationPracticeFormTests extends TestBase {
         $("#subjectsInput").setValue(subject1).pressEnter();
         $("#subjectsInput").setValue(subject2).pressEnter();
         $("#hobbiesWrapper").$(byText(hobby)).click();
-        $("#uploadPicture").uploadFile(new File(fileloc));
+        $("#uploadPicture").uploadFromClasspath("img/" + filename);
         $("#currentAddress").setValue(address);
         $("#submit").scrollIntoView(false);
         $("#state").click();
@@ -65,7 +62,7 @@ public class AutomationPracticeFormTests extends TestBase {
         $$(".table-responsive tr").filterBy(text("Date of birth")).shouldHave(texts(day + " " + month + "," + year));
         $$(".table-responsive tr").filterBy(text("Subjects")).shouldHave(texts(subject1 + "," + " " + subject2));
         $$(".table-responsive tr").filterBy(text("Hobbies")).shouldHave(texts(hobby));
-        $$(".table-responsive tr").filterBy(text("Picture")).shouldHave(texts(filename));
+        $$(".table-responsive tr").filterBy(text("Picture")).shouldHave(texts("img/" + filename));
         $$(".table-responsive tr").filterBy(text("Address")).shouldHave(texts(address));
         $$(".table-responsive tr").filterBy(text("State and City")).shouldHave(texts(state + " " + city));
     }
