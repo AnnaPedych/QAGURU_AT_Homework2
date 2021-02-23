@@ -62,7 +62,7 @@ public class AutomationPracticeFormTests extends TestBase {
         $$(".table-responsive tr").filterBy(text("Date of birth")).shouldHave(texts(day + " " + month + "," + year));
         $$(".table-responsive tr").filterBy(text("Subjects")).shouldHave(texts(subject1 + "," + " " + subject2));
         $$(".table-responsive tr").filterBy(text("Hobbies")).shouldHave(texts(hobby));
-        $$(".table-responsive tr").filterBy(text("Picture")).shouldHave(texts("img/" + filename));
+        $$(".table-responsive tr").filterBy(text("Picture")).shouldHave(texts(filename));
         $$(".table-responsive tr").filterBy(text("Address")).shouldHave(texts(address));
         $$(".table-responsive tr").filterBy(text("State and City")).shouldHave(texts(state + " " + city));
     }
