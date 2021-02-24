@@ -79,6 +79,8 @@ public class AutomationPracticeFormTests extends TestBase {
         step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
         step("Submit empty form", () -> {
             $("#submit").scrollIntoView(false);
+            $("#state").click();
+            $("#stateCity-wrapper").$(byText("NCD")).click();
             $("#submit").click();
             });
         step("Verify successful form submit", () -> $(".modal-title").shouldHave(text("Thanks for submitting the form")));
