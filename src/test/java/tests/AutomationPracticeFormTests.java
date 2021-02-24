@@ -49,7 +49,7 @@ public class AutomationPracticeFormTests extends TestBase {
             $("#subjectsInput").setValue(subject1).pressEnter();
             $("#subjectsInput").setValue(subject2).pressEnter();
             $("#hobbiesWrapper").$(byText(hobby)).click();
-            $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
+            //$("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
             $("#currentAddress").setValue(address);
             $("#submit").scrollIntoView(false);
             $("#state").click();
