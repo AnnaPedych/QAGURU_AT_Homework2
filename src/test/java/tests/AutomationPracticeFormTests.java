@@ -1,10 +1,9 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.text;
@@ -15,6 +14,7 @@ import static io.qameta.allure.Allure.step;
 public class AutomationPracticeFormTests extends TestBase {
 
     @Test
+    @DisplayName("Positive TC")
     @Tag("positive")
     void FormFieldsPopulationTest() {
 //Test data
@@ -30,7 +30,7 @@ public class AutomationPracticeFormTests extends TestBase {
                 subject1 = "Maths",
                 subject2 = "Computer Science",
                 hobby = "Reading",
-                filename = "1.png",
+                //filename = "1.png",
                 address = faker.address().fullAddress(),
                 state = "NCR",
                 city = "Noida";
@@ -74,6 +74,7 @@ public class AutomationPracticeFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Negative TC")
     @Tag("negative")
     void FormFieldsPopulationNegativeTest() {
         step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
