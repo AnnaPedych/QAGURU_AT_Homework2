@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class AutomationPracticeFormTests extends TestBase {
 
     @Test
+    @DisplayName("Positive TC")
     @Tag("positive")
     void FormFieldsPopulationTest() {
 //Test data
@@ -74,6 +76,7 @@ public class AutomationPracticeFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Negative TC")
     @Tag("negative")
     void FormFieldsPopulationNegativeTest() {
         step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
