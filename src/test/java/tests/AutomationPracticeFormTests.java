@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
@@ -47,7 +49,7 @@ public class AutomationPracticeFormTests extends TestBase {
             $("#subjectsInput").setValue(subject1).pressEnter();
             $("#subjectsInput").setValue(subject2).pressEnter();
             $("#hobbiesWrapper").$(byText(hobby)).click();
-            $("#uploadPicture").uploadFromClasspath("img/" + filename);
+            $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
             $("#currentAddress").setValue(address);
             $("#submit").scrollIntoView(false);
             $("#state").click();
