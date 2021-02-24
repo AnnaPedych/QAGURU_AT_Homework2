@@ -14,15 +14,18 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.startMaximized = true;
-        // config for Java + Selenide
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/";
-    }
 
+        if (System.getProperty("remote_driver") != null) {
+            // config for Java + Selenide
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
+            Configuration.remote = System.getProperty("remote_driver");
+        }
+    }
     @AfterEach
     public void afterEach() {
         attachScreenshot("Last screenshot");

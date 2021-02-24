@@ -77,7 +77,10 @@ public class AutomationPracticeFormTests extends TestBase {
     @Tag("negative")
     void FormFieldsPopulationNegativeTest() {
         step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
-        step("Submit empty form", () -> $("#submit").click());
+        step("Submit empty form", () -> {
+            $("#submit").scrollIntoView(false);
+            $("#submit").click();
+            });
         step("Verify successful form submit", () -> $(".modal-title").shouldHave(text("Thanks for submitting the form")));
     }
 }
