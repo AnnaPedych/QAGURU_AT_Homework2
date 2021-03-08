@@ -20,7 +20,7 @@ public class TestBase {
 
         final TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
-        if (config.isRemote() == true) {
+        if (config.isRemote()) {
             // config for Java + Selenide
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
