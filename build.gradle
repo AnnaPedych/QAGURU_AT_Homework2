@@ -53,3 +53,10 @@ task negative_tests(type: Test) {
     }
     systemProperties(System.getProperties())
 }
+
+task positive_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags 'positive'
+    }
+    systemProperties(System.getProperties())
+}
