@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ public class AutomationPracticeFormTests extends TestBase {
     @DisplayName("Positive TC")
     @Tag("positive")
     void FormFieldsPopulationTest() {
+
 //Test data
         Faker faker = new Faker();
         String firstname = faker.name().firstName(),
