@@ -26,8 +26,6 @@ public class TestBase {
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
-            Configuration.remote = System.getProperty("remote_driver");
-            Configuration.browser = System.getProperty("browser");
         }
     }
     @AfterEach
