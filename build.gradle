@@ -44,10 +44,12 @@ tasks.withType(Test) {
 
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
 
 task negative_tests(type: Test) {
     useJUnitPlatform {
         includeTags 'negative'
     }
+    systemProperties(System.getProperties())
 }
