@@ -28,12 +28,13 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
         }
     }
+
     @AfterEach
     public void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
-        if(System.getProperty("video_storage") != null)
+        if (System.getProperty("video_storage") != null)
             attachVideo();
         closeWebDriver();
     }
