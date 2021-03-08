@@ -9,7 +9,7 @@ public interface TestsConfig extends Config {
     @Key("browserVersion")
     String getBrowserVersion();
 
-    @Key("mode")
+    @Key("remoteMode")
     Boolean isRemote();
 
     @Key("webDriverUrl")
