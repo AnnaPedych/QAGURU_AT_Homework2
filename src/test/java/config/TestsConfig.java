@@ -1,8 +1,10 @@
 package config;
 
 import org.aeonbits.owner.Config;
-
-@Config.Sources("classpath:${mode}.properties")
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "system:properties",
+        "classpath:${mode}.properties"})
 public interface TestsConfig extends Config {
     @Key("browserName")
     String browserName();
