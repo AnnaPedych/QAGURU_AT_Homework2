@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelper.*;
+import static io.qameta.allure.Allure.step;
 
 public class TestBase {
     @BeforeAll
@@ -32,6 +33,7 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = remoteDriver;
         }
+        step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
     }
 
     @AfterEach

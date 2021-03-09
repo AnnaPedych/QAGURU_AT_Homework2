@@ -36,7 +36,6 @@ public class AutomationPracticeFormTests extends TestBase {
                 state = "NCR",
                 city = "Noida";
 
-        step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
         step("Fill in students registration form", () -> {
             $("#firstName").setValue(firstname);
             $x("//input[@id='lastName']").setValue(lastname);
