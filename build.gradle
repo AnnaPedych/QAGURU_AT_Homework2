@@ -58,5 +58,8 @@ task positive_tests(type: Test) {
     useJUnitPlatform {
         includeTags 'positive'
     }
+    System.setProperty("mode", "selenoid")
+    System.setProperty("video_storage", "https://selenoid.autotests.cloud/video/")
     systemProperties(System.getProperties())
+
 }
