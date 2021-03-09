@@ -32,7 +32,6 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = remoteDriver;
         }
-        open("https://demoqa.com/automation-practice-form");
     }
 
     @AfterEach
