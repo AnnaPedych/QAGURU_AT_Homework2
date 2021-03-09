@@ -11,7 +11,7 @@ public interface TestsConfig extends Config {
     @Key("browserVersion")
     String browserVersion();
 
-    @Key("remoteMode")
+    @Key("isRemote")
     Boolean isRemote();
 
     @Key("webDriverUrl")
