@@ -33,7 +33,6 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = remoteDriver;
         }
-        step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
     }
 
     @AfterEach
