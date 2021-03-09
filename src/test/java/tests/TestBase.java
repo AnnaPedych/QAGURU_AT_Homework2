@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelper.*;
 
@@ -31,6 +32,7 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = remoteDriver;
         }
+        open("https://demoqa.com/automation-practice-form");
     }
 
     @AfterEach
