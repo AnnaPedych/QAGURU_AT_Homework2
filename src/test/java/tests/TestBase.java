@@ -23,7 +23,6 @@ public class TestBase {
         final TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
         Configuration.browser = config.browserName();
         Configuration.browserVersion = config.browserVersion();
-        String remoteDriver = config.webDriverUrl();
 
         if (config.isRemote()) {
             // config for Java + Selenide
@@ -31,7 +30,7 @@ public class TestBase {
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
-            Configuration.remote = remoteDriver;
+            Configuration.remote = config.webDriverUrl();
         }
     }
 
